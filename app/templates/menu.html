@@ -1,0 +1,28 @@
+<nav class="sidebar">
+    <div class="nav nav-pills flex-column">
+        {% for item in menu_items %}
+            <a href="{{ item.url }}" 
+               class="nav-link {% if item.id == active_item %}active{% endif %}"
+               {% if item.icon %}data-icon="{{ item.icon }}"{% endif %}>
+                {% if item.icon %}
+                    <i class="bi bi-{{ item.icon }}"></i>
+                {% endif %}
+                {{ item.label }}
+            </a>
+            {% if item.children %}
+                <div class="submenu">
+                    {% for child in item.children %}
+                        <a href="{{ child.url }}" 
+                           class="nav-link {% if child.id == active_item %}active{% endif %}"
+                           {% if child.icon %}data-icon="{{ child.icon }}"{% endif %}>
+                            {% if child.icon %}
+                                <i class="bi bi-{{ child.icon }}"></i>
+                            {% endif %}
+                            {{ child.label }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</nav>

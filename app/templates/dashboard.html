@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Jato Navigation{% endblock %}
+
+{% block breadcrumb %}
+{% if breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {% for item in breadcrumb %}
+            <li class="breadcrumb-item {% if item.active %}active{% endif %}">
+                {% if item.active %}
+                    {{ item.label }}
+                {% else %}
+                    <a href="{{ item.url }}">{{ item.label }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>Dashboard</h1>
+    <p>Admin dashboard content goes here.</p>
+    
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Navigation Info</h5>
+            <p><strong>Current Path:</strong> /dashboard</p>
+            <p><strong>Active Menu Item:</strong> {{ active_item }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+from flask import Flask
+from config import config
+
+def create_app(config_name='development'):
+    """Application factory"""
+    app = Flask(__name__)
+    app.config.from_object(config[config_name])
+    
+    # Register navigation system
+    from app.navigation import init_navigation
+    init_navigation(app)
+    
+    # Register blueprints
+    from app.routes import main_bp
+    app.register_blueprint(main_bp)
+    
+    return app

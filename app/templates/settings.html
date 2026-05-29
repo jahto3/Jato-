@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Settings - Jato Navigation{% endblock %}
+
+{% block breadcrumb %}
+{% if breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {% for item in breadcrumb %}
+            <li class="breadcrumb-item {% if item.active %}active{% endif %}">
+                {% if item.active %}
+                    {{ item.label }}
+                {% else %}
+                    <a href="{{ item.url }}">{{ item.label }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>Settings</h1>
+    <p>Application settings go here.</p>
+</div>
+{% endblock %}

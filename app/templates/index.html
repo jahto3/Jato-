@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Jato Navigation{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>Welcome to Jato Navigation System</h1>
+    <p>This is a Python-based web application navigation system with menu structure support.</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Features</h5>
+                    <ul>
+                        <li>Hierarchical menu structure</li>
+                        <li>Dynamic route registration</li>
+                        <li>Role-based access control</li>
+                        <li>Menu item visibility control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Getting Started</h5>
+                    <p>Use the menu on the left to navigate through the application.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
