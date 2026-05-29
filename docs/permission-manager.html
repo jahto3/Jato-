@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PermissionManager Documentation - Jato</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container-lg">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="bi bi-compass"></i> Jato
+            </a>
+            <a href="../index.html" class="btn btn-outline-primary">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container-lg py-5">
+        <h1 class="display-4 fw-bold mb-3">PermissionManager</h1>
+        <p class="lead text-muted mb-5">Role-based access control management</p>
+
+        <section class="mb-5">
+            <h2 class="h4 fw-bold mb-3">Overview</h2>
+            <p>The <code>PermissionManager</code> handles user roles and permissions. It allows you to define roles, assign permissions to roles, and check user permissions and roles.</p>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 fw-bold mb-3">Methods</h2>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>create_role(role_name, permissions)</code></h6>
+                    <p class="card-text text-muted">Create a new role with optional permissions</p>
+                    <pre><code>from app.navigation import get_permission_manager
+
+perm_mgr = get_permission_manager()
+perm_mgr.create_role('admin', {'read', 'write', 'delete'})
+perm_mgr.create_role('editor', {'read', 'write'})
+perm_mgr.create_role('viewer', {'read'})</code></pre>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>add_permission(role_name, permission)</code></h6>
+                    <p class="card-text text-muted">Add a permission to a role</p>
+                    <pre><code>perm_mgr.add_permission('editor', 'publish')</code></pre>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>has_permission(role_name, permission) → bool</code></h6>
+                    <p class="card-text text-muted">Check if a role has a specific permission</p>
+                    <pre><code>if perm_mgr.has_permission('admin', 'delete'):
+    # Allow deletion
+    pass</code></pre>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>has_any_role(user_roles, required_roles) → bool</code></h6>
+                    <p class="card-text text-muted">Check if user has any of the required roles</p>
+                    <pre><code>user_roles = ['editor']
+required = ['admin', 'editor']
+
+if perm_mgr.has_any_role(user_roles, required):
+    # User has permission
+    pass</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container-lg">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 Jato. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavigationRouter Documentation - Jato</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container-lg">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="bi bi-compass"></i> Jato
+            </a>
+            <a href="../index.html" class="btn btn-outline-primary">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container-lg py-5">
+        <h1 class="display-4 fw-bold mb-3">NavigationRouter</h1>
+        <p class="lead text-muted mb-5">Manages routing and navigation with breadcrumb support</p>
+
+        <section class="mb-5">
+            <h2 class="h4 fw-bold mb-3">Overview</h2>
+            <p>The <code>NavigationRouter</code> handles route registration, breadcrumb generation, and active menu item tracking. It works in conjunction with the <code>MenuManager</code> to provide a complete navigation solution.</p>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 fw-bold mb-3">Methods</h2>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>register_route(path, name, menu_item_id, required_roles, metadata)</code></h6>
+                    <p class="card-text text-muted">Register a route with navigation metadata</p>
+                    <pre><code>from app.navigation import get_navigation
+
+navigation = get_navigation()
+navigation.register_route(
+    path='/dashboard',
+    name='dashboard',
+    menu_item_id='dashboard',
+    required_roles=['admin']
+)</code></pre>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>get_route(path) → Optional[Dict]</code></h6>
+                    <p class="card-text text-muted">Retrieve route information by path</p>
+                    <pre><code>route = navigation.get_route('/dashboard')</code></pre>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>get_breadcrumb(path) → List[Dict]</code></h6>
+                    <p class="card-text text-muted">Get breadcrumb navigation for a path</p>
+                    <pre><code>breadcrumb = navigation.get_breadcrumb('/dashboard/users')
+# Returns: [
+#     {'label': 'Home', 'url': '/', 'active': False},
+#     {'label': 'Dashboard', 'url': '/dashboard', 'active': False},
+#     {'label': 'Users', 'url': '/dashboard/users', 'active': True}
+# ]</code></pre>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-title fw-bold"><code>get_active_menu_item(path) → Optional[str]</code></h6>
+                    <p class="card-text text-muted">Get the active menu item ID for the current path</p>
+                    <pre><code>active_id = navigation.get_active_menu_item('/dashboard')
+# Returns: 'dashboard'</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h4 fw-bold mb-3">Usage Example</h2>
+            <pre><code>from flask import render_template, request
+from app.navigation import get_navigation
+
+@app.route('/dashboard')
+def dashboard():
+    navigation = get_navigation()
+    
+    # Get breadcrumb for current page
+    breadcrumb = navigation.get_breadcrumb(request.path)
+    
+    # Get active menu item
+    active_item = navigation.get_active_menu_item(request.path)
+    
+    return render_template('dashboard.html',
+                         breadcrumb=breadcrumb,
+                         active_item=active_item)</code></pre>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container-lg">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 Jato. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

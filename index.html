@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jato - Advanced Navigation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-compass"></i> Jato
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#docs">Documentation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#install">Install</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="https://github.com/jahto3/Jato-" target="_blank">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container-lg py-5">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 order-lg-1">
+                    <h1 class="display-3 fw-bold mb-4">
+                        Advanced <span class="gradient-text">Navigation</span> for Web Apps
+                    </h1>
+                    <p class="lead mb-4 text-muted">
+                        Jato is a powerful Python-based navigation system designed for building sophisticated web applications with hierarchical menus, role-based access control, and dynamic routing.
+                    </p>
+                    <div class="d-flex gap-3 mb-4">
+                        <a href="#install" class="btn btn-primary btn-lg">
+                            <i class="bi bi-download"></i> Get Started
+                        </a>
+                        <a href="https://github.com/jahto3/Jato-" target="_blank" class="btn btn-outline-primary btn-lg">
+                            <i class="bi bi-github"></i> View on GitHub
+                        </a>
+                    </div>
+                    <div class="d-flex gap-4 text-muted">
+                        <div>
+                            <h6 class="fw-bold">Python 3.8+</h6>
+                            <small>Latest Python support</small>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">MIT License</h6>
+                            <small>Open source & free</small>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">Production Ready</h6>
+                            <small>Enterprise grade</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2">
+                    <div class="hero-image">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-buttons">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="browser-content">
+                                <div class="mock-sidebar">
+                                    <div class="mock-nav-item active"><i class="bi bi-house"></i> Home</div>
+                                    <div class="mock-nav-item"><i class="bi bi-speedometer2"></i> Dashboard</div>
+                                    <div class="mock-nav-item"><i class="bi bi-gear"></i> Settings</div>
+                                </div>
+                                <div class="mock-content">
+                                    <div class="mock-title">Welcome to Jato</div>
+                                    <div class="mock-text"></div>
+                                    <div class="mock-text short"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5" id="features">
+        <div class="container-lg">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Powerful Features</h2>
+                <p class="lead text-muted">Everything you need to build sophisticated navigation systems</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3 mb-2">Hierarchical Menus</h5>
+                        <p class="text-muted">Create unlimited nested menu structures with parent-child relationships.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3 mb-2">Role-Based Access</h5>
+                        <p class="text-muted">Control menu visibility based on user roles and permissions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-signpost-2"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3 mb-2">Dynamic Routing</h5>
+                        <p class="text-muted">Register routes with navigation metadata on the fly.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-breadcrumb"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3 mb-2">Breadcrumbs</h5>
+                        <p class="text-muted">Automatic breadcrumb generation for better UX.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3 mb-2">Icon Support</h5>
+                        <p class="text-muted">Add beautiful icons to menu items with Bootstrap Icons.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear-wide-connected"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3 mb-2">Easy Configuration</h5>
+                        <p class="text-muted">Simple API for configuration and customization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Example Section -->
+    <section class="bg-light py-5" id="demo">
+        <div class="container-lg">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Simple to Use</h2>
+                <p class="lead text-muted">Get started in minutes with intuitive Python API</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5 class="fw-bold mb-3">Create Menu Items</h5>
+                    <pre><code class="language-python">from app.navigation.menu import MenuItem, MenuManager
+
+# Create manager
+menu = MenuManager()
+
+# Add menu item
+home = MenuItem(
+    id='home',
+    label='Home',
+    url='/',
+    icon='house',
+    order=1
+)
+menu.add_item(home)
+
+# Add admin-only item
+dashboard = MenuItem(
+    id='dashboard',
+    label='Dashboard',
+    url='/dashboard',
+    required_roles=['admin']
+)
+menu.add_item(dashboard)</code></pre>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="fw-bold mb-3">Register Routes</h5>
+                    <pre><code class="language-python">from app.navigation import get_navigation
+
+# Get navigation router
+navigation = get_navigation()
+
+# Register routes
+navigation.register_route(
+    '/dashboard',
+    'dashboard',
+    menu_item_id='dashboard',
+    required_roles=['admin']
+)
+
+# Get breadcrumb for current path
+breadcrumb = navigation.get_breadcrumb('/dashboard')
+
+# Get active menu item
+active = navigation.get_active_menu_item('/dashboard')</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="py-5" id="install">
+        <div class="container-lg">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Installation</h2>
+                <p class="lead text-muted">Get up and running in three simple steps</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">
+                                <span class="badge bg-primary">1</span> Clone the Repository
+                            </h5>
+                            <pre><code>git clone https://github.com/jahto3/Jato-.git
+cd Jato-</code></pre>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">
+                                <span class="badge bg-primary">2</span> Install Dependencies
+                            </h5>
+                            <pre><code>pip install -r requirements.txt</code></pre>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">
+                                <span class="badge bg-primary">3</span> Run the Application
+                            </h5>
+                            <pre><code>python main.py</code></pre>
+                            <p class="text-muted mb-0">Visit <code>http://localhost:5000</code> in your browser</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="bg-light py-5" id="docs">
+        <div class="container-lg">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Documentation</h2>
+                <p class="lead text-muted">Learn more about Jato's components and API</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="doc-card">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-diagram-3"></i> MenuManager</h5>
+                        <p class="text-muted small">Manages menu structure and items with support for hierarchical relationships.</p>
+                        <a href="docs/menu-manager.html" class="btn btn-sm btn-outline-primary">Learn More →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="doc-card">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-signpost-2"></i> NavigationRouter</h5>
+                        <p class="text-muted small">Handles route registration, breadcrumbs, and active menu item tracking.</p>
+                        <a href="docs/navigation-router.html" class="btn btn-sm btn-outline-primary">Learn More →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="doc-card">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-shield-check"></i> PermissionManager</h5>
+                        <p class="text-muted small">Controls user roles and permissions for access control.</p>
+                        <a href="docs/permission-manager.html" class="btn btn-sm btn-outline-primary">Learn More →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="doc-card">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-palette"></i> Customization</h5>
+                        <p class="text-muted small">Customize menus, styles, and behavior to match your needs.</p>
+                        <a href="docs/customization.html" class="btn btn-sm btn-outline-primary">Learn More →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="doc-card">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-lightning"></i> Advanced Usage</h5>
+                        <p class="text-muted small">Explore advanced features and integration patterns.</p>
+                        <a href="docs/advanced.html" class="btn btn-sm btn-outline-primary">Learn More →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="doc-card">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-question-circle"></i> API Reference</h5>
+                        <p class="text-muted small">Complete API documentation and method references.</p>
+                        <a href="docs/api-reference.html" class="btn btn-sm btn-outline-primary">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container-lg text-center">
+            <h2 class="display-5 fw-bold mb-3">Ready to Build Better Navigation?</h2>
+            <p class="lead mb-4">Start using Jato today and create powerful, intuitive navigation systems.</p>
+            <a href="https://github.com/jahto3/Jato-" target="_blank" class="btn btn-light btn-lg">
+                <i class="bi bi-github"></i> Get Started on GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="fw-bold mb-2"><i class="bi bi-compass"></i> Jato Navigation System</h6>
+                    <p class="text-muted small">Advanced navigation framework for Python web applications.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://github.com/jahto3/Jato-" class="text-white me-3" target="_blank">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://github.com/jahto3" class="text-white" target="_blank">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                </div>
+            </div>
+            <hr class="border-secondary my-3">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 Jato. MIT License. Made by jahto3</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+</html>
